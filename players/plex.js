@@ -118,7 +118,7 @@
       if (lastURL != imageUrl) {
         lastURL = imageUrl;
         if (imageUrl) {
-          imageUrl = imageUrl.replace(/=160/g, '=512');
+          imageUrl = imageUrl.(/(width|height)=[0-9]+/g, '$1=512');
           simplify.setCurrentArtwork(imageUrl);
         } else {
           simplify.setCurrentArtwork(null);
